@@ -1,0 +1,16 @@
+ @Test
+    void createSortedReportShouldThrowIllegalArgumentExceptionWhenItGetsWrongFilePath() {
+        assertThrows(java.lang.IllegalArgumentException.class, () -> {
+            DriversSorter driversSorter = new DriversSorter();
+            driversSorter.createSortedReport(START_LOG, END_LOG, TestingData.WRONG_FILE_PATH);
+        });
+    }
+
+    @Test()
+    void createSortedReportShouldThrowIllegalArgumentExceptionWhenItGetsWrongTimeFormat() {
+        assertThrows(java.lang.IllegalArgumentException.class, () -> {
+            DriversSorter driversSorter = new DriversSorter();
+            driversSorter.createSortedReport(WRONG_FORMAT_START_LOG, END_TEST, ABBREVIATION_TEST);
+        });
+    }
+
